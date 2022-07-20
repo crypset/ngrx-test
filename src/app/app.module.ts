@@ -11,21 +11,27 @@ import { collectionReducer } from './state/collection.reducer';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookCollectionComponent } from './book-collection/book-collection.component';
 import { HttpClientModule } from '@angular/common/http';
+import { scoreboardReducer } from './scoreboard.reducer';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyCounterComponent,
     BookListComponent,
-    BookCollectionComponent
+    BookCollectionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ count: counterReducer, books: booksReducer, collection: collectionReducer })
+    StoreModule.forRoot({
+      count: counterReducer,
+      books: booksReducer,
+      collection: collectionReducer,
+      game: scoreboardReducer
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
